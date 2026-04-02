@@ -43,21 +43,16 @@ export default function TeamCarousel() {
         >
           {members.map((member) => {
             const hasInterview = member.interview.length > 0
-            const Wrapper = hasInterview ? Link : 'div'
-            const wrapperProps = hasInterview ? { href: `/team/${member.slug}` } : {}
+            const cardClass = `group relative flex shrink-0 flex-col justify-end overflow-hidden rounded-xl shadow-md ${
+              hasInterview ? 'cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1' : ''
+            }`
+            const cardStyle = {
+              width: cardWidth > 0 ? `${cardWidth}px` : `calc((100% - 32px) / 3)`,
+              height: 280,
+            }
 
-            return (
-              <Wrapper
-                key={member.slug}
-                {...(wrapperProps as Record<string, string>)}
-                className={`group relative flex shrink-0 flex-col justify-end overflow-hidden rounded-xl shadow-md ${
-                  hasInterview ? 'cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1' : ''
-                }`}
-                style={{
-                  width: cardWidth > 0 ? `${cardWidth}px` : `calc((100% - 32px) / 3)`,
-                  height: 280,
-                }}
-              >
+            const cardContent = (
+              <>
                 {/* Background photo or gradient */}
                 {member.photo ? (
                   <Image
@@ -90,7 +85,17 @@ export default function TeamCarousel() {
                     </p>
                   )}
                 </div>
-              </Wrapper>
+              </>
+            )
+
+            return hasInterview ? (
+              <Link key={member.slug} href={`/team/${member.slug}`} className={cardClass} style={cardStyle}>
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={member.slug} className={cardClass} style={cardStyle}>
+                {cardContent}
+              </div>
             )
           })}
         </div>

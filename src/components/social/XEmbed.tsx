@@ -31,8 +31,8 @@ export default function XEmbed({ username, height = 500 }: XEmbedProps) {
     const existingScript = document.getElementById('twitter-wjs')
     if (existingScript) {
       // If script already loaded, re-process widgets
-      if ((window as Record<string, unknown>).twttr) {
-        const twttr = (window as Record<string, unknown>).twttr as {
+      if ((window as unknown as Record<string, unknown>).twttr) {
+        const twttr = (window as unknown as Record<string, unknown>).twttr as {
           widgets: { load: (el?: HTMLElement) => void }
         }
         twttr.widgets.load(containerRef.current)

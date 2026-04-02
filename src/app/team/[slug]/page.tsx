@@ -11,12 +11,13 @@ export function generateStaticParams() {
     .map((m) => ({ slug: m.slug }))
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
-}): Metadata {
-  const member = members.find((m) => m.slug === params.slug)
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const member = members.find((m) => m.slug === slug)
   if (!member) return { title: '社員紹介 | 合同会社Bremch' }
   return {
     title: `${member.initials}さんインタビュー | 合同会社Bremch`,
