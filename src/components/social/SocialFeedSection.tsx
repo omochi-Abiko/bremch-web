@@ -37,20 +37,7 @@ export default function SocialFeedSection() {
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-xl">
-                <XEmbed username={X_USERNAME} height={480} />
-              </div>
-
-              <div className="mt-4 text-center">
-                <a
-                  href={`https://x.com/${X_USERNAME}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-forest-700 px-6 py-3 text-sm font-semibold text-cream transition-all hover:-translate-y-0.5 hover:bg-forest-600 hover:shadow-lg"
-                >
-                  Xをフォローする
-                </a>
-              </div>
+              <XEmbed username={X_USERNAME} />
             </div>
           </ScrollReveal>
 
