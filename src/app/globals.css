@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Forest greens */
-  --forest-900: #1a2e1a;
-  --forest-800: #2d4a2d;
-  --forest-700: #3d6b3d;
-  --forest-600: #4a8c4a;
-  --forest-500: #5cad5c;
+  /* Greens - brighter palette */
+  --forest-900: #1b5e20;
+  --forest-800: #2e7d32;
+  --forest-700: #388e3c;
+  --forest-600: #43a047;
+  --forest-500: #66bb6a;
 
   /* Bark / wood tones */
-  --bark-700: #4a3728;
-  --bark-500: #8b6f47;
-  --bark-300: #c4a882;
+  --bark-700: #5d4037;
+  --bark-500: #a1887f;
+  --bark-300: #d7ccc8;
 
   /* Accents */
-  --cream: #f5f0e8;
-  --moss: #7a9a5a;
-  --sunlight: #e8d44d;
+  --cream: #f9faf5;
+  --moss: #8bc34a;
+  --sunlight: #fdd835;
 }
 
 @theme inline {
@@ -62,6 +62,38 @@ body {
   color: var(--forest-900);
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.8;
+}
+
+/* Hero background floating animations */
+@keyframes heroFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 30px) scale(1.08); }
+}
+
+@keyframes heroFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.1); }
+  66% { transform: translate(30px, -20px) scale(0.92); }
+}
+
+@keyframes heroFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(25px, -35px) scale(1.06); }
+  40% { transform: translate(-30px, -10px) scale(0.94); }
+  60% { transform: translate(15px, 40px) scale(1.04); }
+  80% { transform: translate(-25px, 15px) scale(0.97); }
+}
+
+@keyframes heroFloat4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-35px, 25px) scale(1.12); }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 h1,

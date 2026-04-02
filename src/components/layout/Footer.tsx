@@ -84,16 +84,25 @@ export default function Footer() {
             </h4>
             <div className="mt-4 flex flex-col gap-3 text-sm text-cream/70">
               <a
-                href="mailto:info@bremch.co.jp"
+                href="tel:0487116593"
                 className="transition-colors duration-200 hover:text-forest-500"
               >
-                info@bremch.co.jp
+                048-711-6593
+              </a>
+              <a
+                href="mailto:contact@bremch.co.jp"
+                className="transition-colors duration-200 hover:text-forest-500"
+              >
+                contact@bremch.co.jp
               </a>
               <p>
-                〒000-0000
+                〒336-0031
                 <br />
-                東京都（住所準備中）
+                埼玉県さいたま市南区鹿手袋7-12-11
+                <br />
+                寿コーポ301号室
               </p>
+              <p>営業時間: 10:00 – 19:00</p>
             </div>
           </div>
         </div>
