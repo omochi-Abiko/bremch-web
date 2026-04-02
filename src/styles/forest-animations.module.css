@@ -1,5 +1,3 @@
-/* ── Keyframes ────────────────────────────────────── */
-
 @keyframes floatLeaf {
   0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
   25% { transform: translate(-80px, 25vh) rotate(90deg); }
@@ -8,31 +6,13 @@
   100% { transform: translate(-60px, 100vh) rotate(360deg); opacity: 0; }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes vineGrow {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
-}
-
 @keyframes ripple {
   0% { transform: translate(-50%, -50%) scale(0); opacity: 0.4; }
   100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
 }
 
-/* ── Animation classes ──────────────────────────── */
-
 .floatLeaf { animation: floatLeaf 15s ease-in-out infinite; }
 .floatLeaf.reduced { animation: none; opacity: 0; }
-
-.fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
-.fadeInUp.reduced { animation: none; opacity: 1; transform: none; }
-
-.vineGrow { transform-origin: top center; animation: vineGrow 1s ease-out forwards; }
-.vineGrow.reduced { animation: none; transform: scaleY(1); opacity: 1; }
 
 .ripple { animation: ripple 0.6s ease-out forwards; }
 .ripple.reduced { animation: none; opacity: 0; }

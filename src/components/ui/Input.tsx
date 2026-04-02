@@ -1,5 +1,3 @@
-'use client';
-
 import { type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react';
 
 type BaseInputProps = {

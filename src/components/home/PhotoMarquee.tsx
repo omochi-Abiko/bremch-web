@@ -38,6 +38,7 @@ export default function PhotoMarquee() {
               width={600}
               height={400}
               className="h-full w-full object-cover"
+              loading="lazy"
             />
           </div>
         ))}

@@ -112,6 +112,7 @@ export default function CompanyPage() {
                               allowFullScreen
                               loading="lazy"
                               referrerPolicy="no-referrer-when-downgrade"
+                              sandbox="allow-scripts allow-same-origin allow-popups"
                               title="所在地"
                             />
                           </div>

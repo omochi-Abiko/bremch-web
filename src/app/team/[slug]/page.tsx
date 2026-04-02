@@ -89,6 +89,8 @@ export default async function MemberPage({
                     className="absolute inset-0 h-full w-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation"
                     title={`${member.initials}さんインタビュー動画`}
                   />
                 </div>

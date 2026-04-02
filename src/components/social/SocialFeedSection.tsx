@@ -1,5 +1,3 @@
-'use client'
-
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import XEmbed from './XEmbed'
 import InstagramEmbed from './InstagramEmbed'

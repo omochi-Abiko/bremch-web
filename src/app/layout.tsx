@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer';
 import ScrollProgress from '@/components/forest/ScrollProgress';
 
 const notoSansJP = Noto_Sans_JP({
+  weight: ['400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-noto-sans-jp',
   display: 'swap',

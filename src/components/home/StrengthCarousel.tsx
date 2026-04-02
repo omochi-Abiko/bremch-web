@@ -72,15 +72,19 @@ export default function StrengthCarousel() {
     resetAutoPlay()
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current)
+      if (transitionRef.current) clearTimeout(transitionRef.current)
     }
   }, [resetAutoPlay])
+
+  const transitionRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const goTo = (index: number) => {
     if (isTransitioning) return
     setIsTransitioning(true)
     setCurrentIndex(index)
     resetAutoPlay()
-    setTimeout(() => setIsTransitioning(false), 400)
+    if (transitionRef.current) clearTimeout(transitionRef.current)
+    transitionRef.current = setTimeout(() => setIsTransitioning(false), 400)
   }
 
   const prev = () => {

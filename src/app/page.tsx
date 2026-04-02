@@ -13,10 +13,10 @@ import { achievements } from '@/data/achievements'
  * Bremchの由来 — 3つの価値観カード
  * ──────────────────────────────────────────── */
 const values = [
-  { letters: 'BR', word: 'BRave', description: '目標とすることや人生の苦難への<strong>勇気</strong>' },
-  { letters: 'EM', word: 'EMpathy', description: '苦楽、つまり辛いときに励まし合えること、<br />挑戦できる勇気がもらえる<strong>居場所</strong>' },
-  { letters: 'CH', word: 'TeCHnology・CHallenge', description: '<strong>新しい技術</strong>の習得や、新しいことへの<strong>挑戦</strong>' },
-] as const
+  { letters: 'BR', word: 'BRave', description: <>目標とすることや人生の苦難への<strong className="text-forest-800">勇気</strong></> },
+  { letters: 'EM', word: 'EMpathy', description: <>苦楽、つまり辛いときに励まし合えること、<br />挑戦できる勇気がもらえる<strong className="text-forest-800">居場所</strong></> },
+  { letters: 'CH', word: 'TeCHnology・CHallenge', description: <><strong className="text-forest-800">新しい技術</strong>の習得や、新しいことへの<strong className="text-forest-800">挑戦</strong></> },
+]
 
 const VALUE_CARD_CLASS =
   'group relative flex h-[280px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-forest-700/10 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1'
@@ -71,10 +71,9 @@ export default function Home() {
                   <div className="mb-3 font-display text-5xl font-bold text-forest-600/20">{v.letters}</div>
                   <h3 className="font-display text-xl font-bold text-forest-900">{v.word}</h3>
                   <div className="mx-auto my-4 h-px w-12 bg-forest-600/30" />
-                  <p
-                    className="text-sm leading-relaxed text-forest-900/70 [&>strong]:text-forest-800"
-                    dangerouslySetInnerHTML={{ __html: v.description }}
-                  />
+                  <p className="text-sm leading-relaxed text-forest-900/70">
+                    {v.description}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
