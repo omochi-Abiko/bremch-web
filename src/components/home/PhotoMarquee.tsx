@@ -1,11 +1,12 @@
 'use client'
 
 import Image from 'next/image'
+import { withBasePath } from '@/lib/basePath'
 
 const images = [
-  { src: '/gallery-1.webp', alt: 'チームの様子' },
-  { src: '/gallery-2.webp', alt: 'インタビュー風景' },
-  { src: '/gallery-3.webp', alt: '業務の様子' },
+  { src: withBasePath('/gallery-1.webp'), alt: 'チームの様子' },
+  { src: withBasePath('/gallery-2.webp'), alt: 'インタビュー風景' },
+  { src: withBasePath('/gallery-3.webp'), alt: '業務の様子' },
 ]
 
 export default function PhotoMarquee() {

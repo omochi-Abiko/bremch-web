@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { members } from '@/data/members'
+import { withBasePath } from '@/lib/basePath'
 
 const VISIBLE = 3
 
@@ -56,7 +57,7 @@ export default function TeamCarousel() {
                 {/* Background photo or gradient */}
                 {member.photo ? (
                   <Image
-                    src={member.photo}
+                    src={withBasePath(member.photo)}
                     alt={member.initials}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

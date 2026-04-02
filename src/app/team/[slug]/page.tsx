@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { members } from '@/data/members'
+import { withBasePath } from '@/lib/basePath'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import TeamCarousel from '@/components/home/TeamCarousel'
 
@@ -47,7 +48,7 @@ export default async function MemberPage({
           <div className="mb-4 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-forest-600 to-forest-800 shadow-lg">
             {member.photo ? (
               <Image
-                src={member.photo}
+                src={withBasePath(member.photo)}
                 alt={member.initials}
                 width={96}
                 height={96}
@@ -124,7 +125,7 @@ export default async function MemberPage({
                         {/* Photo side */}
                         <div className="md:w-2/5">
                           <Image
-                            src={photo.src}
+                            src={withBasePath(photo.src)}
                             alt={photo.alt}
                             width={600}
                             height={450}

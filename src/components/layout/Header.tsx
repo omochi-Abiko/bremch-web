@@ -45,7 +45,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="group -ml-2 flex items-center pt-2">
             <Image
-              src="/logo.webp"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.webp`}
               alt="Bremch"
               width={200}
               height={56}
