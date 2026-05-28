@@ -89,12 +89,16 @@ export const members: Member[] = [
   },
   {
     slug: 'rt',
-    photo: null,
+    photo: '/team-rt.jpg',
     initials: 'R.T',
     department: 'SI事業部インフラエンジニア課',
     background: '未経験より入社',
     mainSkill: 'インフラエンジニア',
     hobby: 'ゲーム',
+    gallery: [
+      { src: '/team-rt-work.jpg', alt: 'R.Tさん 業務の様子' },
+      { src: '/team-rt-interview.jpg', alt: 'R.Tさん インタビューの様子' },
+    ],
     interview: [
       {
         question: 'これまでの経歴と自己紹介',
