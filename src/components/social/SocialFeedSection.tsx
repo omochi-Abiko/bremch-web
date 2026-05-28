@@ -6,6 +6,42 @@ const X_USERNAME = 'Bremch20231101'
 const IG_USERNAME = 'bremch20231101'
 const INSTAGRAM_POSTS: string[] = []
 
+const OTHER_LINKS = [
+  {
+    name: 'note',
+    handle: '@bremchofficial',
+    href: 'https://note.com/bremchofficial',
+    accent: 'text-[#41C9B4]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M5 4h11.5l5 5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm10 1.5V9h3.5L15 5.5zM7 12.5h10v1.5H7v-1.5zm0 3.5h10v1.5H7v-1.5zm0-7h6v1.5H7V9z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'YouTube',
+    handle: '@bremchcorpofficial',
+    href: 'https://www.youtube.com/@bremchcorpofficial',
+    accent: 'text-[#FF0000]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'TikTok',
+    handle: '@bremchofficial',
+    href: 'https://www.tiktok.com/@bremchofficial',
+    accent: 'text-forest-900',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M16.6 5.8c-1-.7-1.7-1.8-1.9-3H11.7v12.2a2.5 2.5 0 1 1-2.5-2.5c.3 0 .6 0 .8.1V9.5a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V8.5a7 7 0 0 0 4.2 1.3V6.7a4.2 4.2 0 0 1-2.5-.9z" />
+      </svg>
+    ),
+  },
+]
+
 export default function SocialFeedSection() {
   return (
     <section className="bg-cream px-4 py-20 sm:px-6 md:py-28">
@@ -76,6 +112,40 @@ export default function SocialFeedSection() {
             </div>
           </ScrollReveal>
         </div>
+
+        {/* ── Other Platforms ── */}
+        <ScrollReveal delay={0.3}>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {OTHER_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 rounded-2xl border border-forest-700/10 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-forest-700/[0.06] ${link.accent} transition-colors group-hover:bg-forest-700/10`}
+                >
+                  {link.icon}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-display text-base font-bold text-forest-900">{link.name}</p>
+                  <p className="truncate text-xs text-forest-900/50">{link.handle}</p>
+                </div>
+                <svg
+                  className="h-4 w-4 shrink-0 text-forest-700/40 transition-transform group-hover:translate-x-0.5 group-hover:text-forest-700"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -47,20 +47,41 @@ export default function ContactPage() {
                   <dt className="font-medium text-bark-500">Email</dt>
                   <dd className="mt-1 text-forest-900">
                     <a
-                      href="mailto:info@bremch.co.jp"
+                      href="mailto:contact@bremch.co.jp"
                       className="underline decoration-forest-500/30 underline-offset-2 transition-colors hover:text-forest-700"
                     >
-                      info@bremch.co.jp
+                      contact@bremch.co.jp
                     </a>
                   </dd>
                 </div>
                 <div>
                   <dt className="font-medium text-bark-500">TEL</dt>
-                  <dd className="mt-1 text-forest-900">03-XXXX-XXXX</dd>
+                  <dd className="mt-1 text-forest-900">
+                    <a
+                      href="tel:0487116593"
+                      className="underline decoration-forest-500/30 underline-offset-2 transition-colors hover:text-forest-700"
+                    >
+                      048-711-6593
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-medium text-bark-500">FAX</dt>
+                  <dd className="mt-1 text-forest-900">-</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-bark-500">所在地</dt>
-                  <dd className="mt-1 text-forest-900">東京都（仮）</dd>
+                  <dd className="mt-1 text-forest-900">
+                    〒336-0031
+                    <br />
+                    埼玉県さいたま市南区鹿手袋7-12-11
+                    <br />
+                    寿コーポ301号室
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-medium text-bark-500">営業時間</dt>
+                  <dd className="mt-1 text-forest-900">10:00 – 19:00</dd>
                 </div>
               </dl>
 

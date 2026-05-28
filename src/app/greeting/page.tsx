@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import WoodCard from '@/components/forest/WoodCard';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { withBasePath } from '@/lib/basePath';
 
 export const metadata: Metadata = {
   title: '代表挨拶 | 合同会社Bremch',
@@ -20,21 +22,22 @@ export default function GreetingPage() {
       {/* Content Section */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
-          {/* Left: CEO Photo Placeholder */}
+          {/* Left: CEO Photo */}
           <ScrollReveal direction="left" className="flex-shrink-0 lg:w-1/3">
-            <div className="mx-auto flex aspect-square w-64 items-center justify-center bg-forest-700 lg:w-full"
+            <div
+              className="relative mx-auto aspect-square w-64 overflow-hidden bg-forest-700 shadow-lg lg:w-full"
               style={{
                 borderRadius: '60% 40% 50% 50% / 50% 60% 40% 50%',
               }}
             >
-              <svg
-                className="h-32 w-32 text-forest-500/60"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-              </svg>
+              <Image
+                src={withBasePath('/ceo-aoki.jpg')}
+                alt="代表社員 青木 和博"
+                fill
+                sizes="(min-width: 1024px) 33vw, 256px"
+                className="object-cover"
+                priority
+              />
             </div>
           </ScrollReveal>
 
@@ -84,7 +87,7 @@ export default function GreetingPage() {
               <div className="mt-10 text-right">
                 <p className="text-sm text-bark-500">合同会社Bremch 代表社員</p>
                 <p className="mt-1 font-display text-xl font-bold text-bark-700">
-                  ○○ ○○
+                  青木 和博
                 </p>
               </div>
             </WoodCard>
