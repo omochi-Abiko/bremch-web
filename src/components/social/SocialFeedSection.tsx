@@ -57,7 +57,41 @@ export default function SocialFeedSection() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-2">
+        {/* ── Other Platforms ── */}
+        <ScrollReveal delay={0.05}>
+          <div className="mt-14 grid gap-4 sm:grid-cols-3">
+            {OTHER_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 rounded-2xl border border-forest-700/10 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-forest-700/[0.06] ${link.accent} transition-colors group-hover:bg-forest-700/10`}
+                >
+                  {link.icon}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-display text-base font-bold text-forest-900">{link.name}</p>
+                  <p className="truncate text-xs text-forest-900/50">{link.handle}</p>
+                </div>
+                <svg
+                  className="h-4 w-4 shrink-0 text-forest-700/40 transition-transform group-hover:translate-x-0.5 group-hover:text-forest-700"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        <div className="mt-10 grid gap-10 lg:grid-cols-2">
           {/* ── X (Twitter) ── */}
           <ScrollReveal delay={0.1}>
             <div className="rounded-2xl border border-forest-700/10 bg-white p-6 shadow-sm">
@@ -112,40 +146,6 @@ export default function SocialFeedSection() {
             </div>
           </ScrollReveal>
         </div>
-
-        {/* ── Other Platforms ── */}
-        <ScrollReveal delay={0.3}>
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {OTHER_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-2xl border border-forest-700/10 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-forest-700/[0.06] ${link.accent} transition-colors group-hover:bg-forest-700/10`}
-                >
-                  {link.icon}
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="font-display text-base font-bold text-forest-900">{link.name}</p>
-                  <p className="truncate text-xs text-forest-900/50">{link.handle}</p>
-                </div>
-                <svg
-                  className="h-4 w-4 shrink-0 text-forest-700/40 transition-transform group-hover:translate-x-0.5 group-hover:text-forest-700"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   )
