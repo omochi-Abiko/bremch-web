@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/company', label: '会社概要' },
   { href: '/greeting', label: '代表挨拶' },
   { href: '/#team', label: '社員紹介' },
+  { href: '/recruit', label: '採用情報' },
   { href: '/contact', label: 'お問い合わせ' },
 ];
 

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 }
 
 const companyData = [
-  { label: '会社名', value: '合同会社Bremch / Bremch LLC.' },
+  { label: '会社名 / 英語表記', value: '合同会社Bremch / Bremch LLC.' },
   { label: '会社名（読み方）', value: 'ゴウドウカイシャブランチ' },
   { label: '代表者', value: '代表社員 青木 和博' },
   { label: '創業（設立）', value: '2023年8月30日' },
-  { label: '従業員', value: '3名（※業務委託を含む）' },
-  { label: '資本金', value: '10,000円' },
+  { label: '従業員', value: '5名（※業務委託を含む）' },
+  { label: '資本金', value: '3,800,000円' },
   {
     label: '所在地',
     value: '〒336-0031 埼玉県さいたま市南区鹿手袋7-12-11 寿コーポ301号室',
@@ -22,15 +22,19 @@ const companyData = [
   },
   { label: '営業時間', value: '10:00 – 19:00' },
   { label: '代表電話', value: '048-711-6593', isPhone: true },
+  { label: 'FAX', value: '-' },
   { label: 'メール', value: 'contact@bremch.co.jp', isEmail: true },
   {
     label: '事業内容',
-    value: '情報システムの開発、計画、作成、運用・保守の請負業',
+    value:
+      '１．システムエンジニアリングサービス（SES）\n２．ソフトウェア開発事業\n３．WEBマーケティング\n４．カジュアルBar店舗の運営',
   },
   {
     label: '主要取引銀行',
-    value: '住信SBI銀行 / GMOあおぞら銀行 / 埼玉縣信用金庫 / 三菱UFJ銀行',
+    value: '住信SBI銀行\nGMOあおぞら銀行\n埼玉縣信用金庫\n三菱UFJ銀行',
   },
+  { label: '税理士', value: '工藤公認会計士税理士事務所' },
+  { label: '主な加入団体', value: 'さいたま市商工会議所 ほか' },
   {
     label: 'コーポレートHP',
     value: 'https://www.bremch.co.jp/',
@@ -76,7 +80,7 @@ export default function CompanyPage() {
                     <dt className="min-w-[180px] text-sm font-bold text-forest-800 sm:min-w-[200px]">
                       {item.label}
                     </dt>
-                    <dd className="text-sm leading-relaxed text-forest-900/80">
+                    <dd className="whitespace-pre-line text-sm leading-relaxed text-forest-900/80">
                       {'isEmail' in item && item.isEmail ? (
                         <a
                           href={`mailto:${item.value}`}
