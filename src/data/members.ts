@@ -180,12 +180,16 @@ export const members: Member[] = [
   },
   {
     slug: 'mi',
-    photo: null,
+    photo: '/team-mi.jpg',
     initials: 'M.I',
     department: 'SI事業部インフラエンジニア課',
     background: '未経験より入社',
     mainSkill: 'インフラエンジニア',
     hobby: '家族と過ごす時間',
+    gallery: [
+      { src: '/team-mi-work.jpg', alt: 'M.Iさん 業務の様子' },
+      { src: '/team-mi-interview.jpg', alt: 'M.Iさん インタビューの様子' },
+    ],
     interview: [
       {
         question: 'これまでの経歴と自己紹介',
