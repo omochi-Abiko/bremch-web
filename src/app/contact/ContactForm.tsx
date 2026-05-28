@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meednolb';
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -34,10 +36,30 @@ export default function ContactForm() {
       return;
     }
 
-    // Simulate submission (replace with actual API endpoint later)
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setSubmitted(true);
-    setIsPending(false);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      });
+
+      if (!res.ok) {
+        const json = await res.json().catch(() => null);
+        const detail =
+          json?.errors?.map((e: { message: string }) => e.message).join(' / ') ??
+          '送信に失敗しました。時間をおいて再度お試しください。';
+        setError(detail);
+        setIsPending(false);
+        return;
+      }
+
+      form.reset();
+      setSubmitted(true);
+    } catch {
+      setError('通信エラーが発生しました。インターネット接続をご確認ください。');
+    } finally {
+      setIsPending(false);
+    }
   }
 
   if (submitted) {
